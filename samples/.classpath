@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.lib-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-base-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-demo-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-flex-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-report-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-samples-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-swt-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-viewer-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-web-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-webdesigner-2016.1.1-trial.jar"/>
+	<classpathentry kind="lib" path="libs/stimulsoft.reports-webviewer-2016.1.1-trial.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
