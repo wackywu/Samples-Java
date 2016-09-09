@@ -3,7 +3,7 @@
 #### This repository contains the source code of the examples of usage Stimulsoft Reports.Java.
 
 #Overview
-This repository has some examples each in different folders:
+This repository has some examples in different folders:
 * samples
 * webdesigner
 * webfx
@@ -17,4 +17,6 @@ These examples are applicable for Stimulsoft Reports.Java, the reporting tool de
 
 You can try the Live demo [here](http://java.stimulsoft.com/) 
 
-Read more about Stimulsoft Reports.Web at [www.stimulsoft.com](https://www.stimulsoft.com/en/products/reports-java)
+Read more about Stimulsoft Reports.Java at [www.stimulsoft.com](https://www.stimulsoft.com/en/products/reports-java)
+
+[Free Download](https://www.stimulsoft.com/en/downloads/reports-java)
