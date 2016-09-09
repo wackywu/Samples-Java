@@ -21,7 +21,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Stimulsoft Webdesigner for Java</title>
-<stiwebdesigner:resources />
 <style type="text/css">
 </style>
 </head>
@@ -32,8 +31,10 @@
 				final String xsdPath = request.getSession().getServletContext().getRealPath("/data/Demo.xsd");
 				final String savePath = request.getSession().getServletContext().getRealPath("/save/");
 	
-			    StiWebDesignerOptions options = new StiWebDesignerOptions();			    
+			    StiWebDesignerOptions options = new StiWebDesignerOptions();	
+			    //options.setLocalization(request.getSession().getServletContext().getRealPath("/localization/de.xml"));		    
 			    StiWebDesigerHandler handler = new StiWebDesigerHandler(){
+			        //Occurred on loading webdesinger. Must return edited StiReport
 			        public StiReport getEditedReport(HttpServletRequest request){
 			            try{
 			              StiReport report = StiSerializeManager.deserializeReport(new File(reportPath));
@@ -44,11 +45,11 @@
 			            }
 			            return null;
 			        }
-
+					//Occurred on opening StiReport. Method intended for populate report data.
 			        public void onOpenReportTemplate(StiReport report, HttpServletRequest request){
 			            report.getDictionary().getDatabases().add(new StiXmlDatabase("Demo", xsdPath, xmlPath));
 			        }
-
+					//Occurred on new StiReport. Method intended for populate report data.
 			        public void onNewReportTemplate(StiReport report, HttpServletRequest request){
 			            report.getDictionary().getDatabases().add(new StiXmlDatabase("Demo", xsdPath, xmlPath));
 			            try{
@@ -67,7 +68,7 @@
 			             	e.printStackTrace();   
 			            }	            
 			        }
-			        
+			        //Occurred on save StiReport. Method must implement saving StiReport
 			        public void onSaveReportTemplate(StiReport report, String reportName, HttpServletRequest request){
 			            try{
 			            	FileOutputStream fos = new FileOutputStream(savePath + reportName + ".mrt");
@@ -78,7 +79,7 @@
 			            }
 			        }
 			    };	   
-			    //options.setLocalization(request.getSession().getServletContext().getRealPath("/localization/ru.xml"));
+			    
 			    pageContext.setAttribute("handler", handler);
 			    pageContext.setAttribute("options", options);
 	%>
