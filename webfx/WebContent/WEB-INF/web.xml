@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
 	<display-name>sti_fx_web</display-name>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-
-	<!-- reports disigner -->
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
 	<servlet>
 		<servlet-name>StimulsoftDesignerFx</servlet-name>
 		<servlet-class>com.stimulsoft.web.servlet.StiDesignerFxServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>StimulsoftDesignerFx</servlet-name>
-		<url-pattern>/stimulsoft_designerfx/*</url-pattern>
+		<url-pattern>/stimulsoft_designerfx</url-pattern>
 	</servlet-mapping>
-
-	<!-- reports viewer -->
 	<servlet>
 		<servlet-name>StimulsoftViewerFx</servlet-name>
 		<servlet-class>com.stimulsoft.web.servlet.StiViewerFxServlet</servlet-class>
@@ -26,10 +25,8 @@
 	<servlet-mapping>
 		<servlet-name>StimulsoftViewerFx</servlet-name>
 		<url-pattern>/stimulsoft_viewerfx</url-pattern>
-	</servlet-mapping>
-
-  <listener>
-    <listener-class>my.servlet.ApplicationInitializer</listener-class>
-  </listener>
-
+	</servlet-mapping>	
+	<listener>
+		<listener-class>com.stimulsoft.ApplicationInitializer</listener-class>
+	</listener>
 </web-app>

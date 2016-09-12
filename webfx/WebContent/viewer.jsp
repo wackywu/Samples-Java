@@ -4,29 +4,23 @@
 <%@ taglib uri="http://stimulsoft.com/viewer" prefix="stiviewerfx"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Stimulsoft report</title>
 </head>
 <body>
 
 <%
-	
+	final String reportPath = request.getSession().getServletContext().getRealPath("/reports/SimpleList.mrt");
 	Properties props = new Properties();
-	//props.put("Localizations.Localization", "en.xml");
-	//props.put("Viewer.Toolbar.ShowSaveButton","False");
-	request.setAttribute("props", props);
-
+	props.put("Viewer.Toolbar.ShowOpenButton","False");
+	request.setAttribute("props", props);	
 	Map<String, String> variableMap = new HashMap<String, String>();
-	variableMap.put("FreeCurrency","true");
+	variableMap.put("Variable1", "St");
 	request.setAttribute("map",variableMap);
-
+	request.setAttribute("props",props);
 %>
-
-<stiviewerfx:iframe report="test.mrt" variableMap="map"
- 	width="100%" height="100%" align="top"
- 	styleClass="" frameborder="0" styleId=""
- 	marginheight="4" marginwidth="10" name="stiviewerfx"
- 	scrolling="no" style="" title="report"/> 	
+<stiviewerfx:iframe report="<%=reportPath%>" variableMap="map" 
+ 	width="100%" height="100%" align="top" scrolling="no" properties="${props}"/> 	
 </body>
 
 </html>

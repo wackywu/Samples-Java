@@ -9,24 +9,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<%	
-	Properties props = new Properties();
-	props.put("Localizations.Localization", "en.xml");	
-	//props.put("Viewer.Toolbar.ShowSaveButton","False");
-	request.setAttribute("props", props);
-%>
-
 <%
+    final String reportPath = request.getSession().getServletContext().getRealPath("/reports/SimpleList.mrt");	
+	Properties props = new Properties();
+	props.put("Theme","Office2013");
+	request.setAttribute("props", props);
 	Map<String, String> variableMap = new HashMap<String, String>();
-	variableMap.put("Variable1","variableMap");
+	variableMap.put("Variable1","variable");
 	request.setAttribute("map",variableMap);
+	request.setAttribute("props",props);
 %>
 
 <body marginheight="0" marginwidth="0">
-
-<stidesignerfx:iframe  width="100%" height="100%" />
-
-
+<stidesignerfx:iframe  report="<%=reportPath%>" width="100%" height="100%" variableStr="Parameter1=30" properties="${props}" />
 </body>
-
 </html>
