@@ -72,7 +72,11 @@
 			        public void onSaveReportTemplate(StiReport report, String reportName, HttpServletRequest request){
 			            try{
 			            	FileOutputStream fos = new FileOutputStream(savePath + reportName + ".mrt");
-			        		StiSerializeManager.serializeReport(report, fos);
+			            	if (!report.isJsonReport()){
+			            		StiSerializeManager.serializeReport(report, fos);
+			            	}else {
+								StiSerializeManager.serializeReportToJson(report, fos);			            	
+			        		}
 			        		fos.close();
 			            } catch (Exception e){
 			                e.printStackTrace();
