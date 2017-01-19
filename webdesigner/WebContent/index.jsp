@@ -1,4 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@page import="com.stimulsoft.base.json.JSONObject"%>
+<%@page import="com.stimulsoft.report.StiOptions"%>
 <%@page import="java.io.FileOutputStream"%>
 <%@page import="java.io.FileInputStream"%>
 <%@page import="com.stimulsoft.report.utils.data.StiDataColumnsUtil"%>
@@ -71,11 +73,22 @@
 			        //Occurred on save StiReport. Method must implement saving StiReport
 			        public void onSaveReportTemplate(StiReport report, String reportName, HttpServletRequest request){
 			            try{
-			            	FileOutputStream fos = new FileOutputStream(savePath + reportName + ".mrt");
+			            	FileOutputStream fos = new FileOutputStream(savePath + reportName);
+			            	JSONObject parameters = new JSONObject(request.getParameter("MvcMobileDesignerParameters"));
 			            	if (!report.isJsonReport()){
-			            		StiSerializeManager.serializeReport(report, fos);
+			            		if (parameters.has("encryptedPassword")){
+			            	       String password = parameters.getString("encryptedPassword");
+								   StiSerializeManager.serializeReport(report, fos, password);
+								}else{
+								   StiSerializeManager.serializeReport(report, fos);
+								}
 			            	}else {
-								StiSerializeManager.serializeReportToJson(report, fos);			            	
+			            	    if (parameters.has("encryptedPassword")){
+			            	       String password = parameters.getString("encryptedPassword");
+								   StiSerializeManager.serializeReportToJson(report, fos, password);
+								}else{
+								   StiSerializeManager.serializeReportToJson(report, fos);
+								}			            	
 			        		}
 			        		fos.close();
 			            } catch (Exception e){
@@ -83,7 +96,6 @@
 			            }
 			        }
 			    };	   
-			    
 			    pageContext.setAttribute("handler", handler);
 			    pageContext.setAttribute("options", options);
 	%>
