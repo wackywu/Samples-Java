@@ -16,7 +16,7 @@ In order to start simply open the requered folder (.project file inside) with Ec
 # About Stimulsoft Reports.Java
 Stimulsoft Reports.Java is a reporting tool, designed for interaction and work of reports in a Java application. The Java technology allows using programs on different platforms, different operating systems and different hardware. Thanks to this Stimulsoft Reports.Java is now available literally everywhere, meanwhile remaining a highly functional and user-friendly tool.
 
-You can try the [Live Demo](http://demo.stimulsoft.com#Java)
+You can try the [Live Demo](http://demo.stimulsoft.com/#Java)
 
 Read more about [Stimulsoft Reports.Java](https://www.stimulsoft.com/en/products/reports-java)
 
