@@ -1,6 +1,6 @@
 # Java samples for Stimulsoft Reports.Java
 
-#### This repository contains the source code of the examples of usage Stimulsoft Reports.Java reporting tool in the applications, using and HTML5/Flash components.
+#### This repository contains the source code of the examples of usage Stimulsoft Reports.Java reporting tool using HTML5/Flash components.
 
 #Overview
 This repository has some examples in different folders:
