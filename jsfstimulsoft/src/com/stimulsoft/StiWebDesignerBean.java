@@ -19,7 +19,7 @@ import com.stimulsoft.report.dictionary.databases.StiXmlDatabase;
 import com.stimulsoft.report.utils.data.StiDataColumnsUtil;
 import com.stimulsoft.report.utils.data.StiSqlField;
 import com.stimulsoft.report.utils.data.StiXmlTable;
-import com.stimulsoft.report.utils.data.StiXmlTableFildsRequest;
+import com.stimulsoft.report.utils.data.StiXmlTableFieldsRequest;
 import com.stimulsoft.webdesigner.StiWebDesigerHandler;
 import com.stimulsoft.webdesigner.StiWebDesignerOptions;
 
@@ -75,7 +75,7 @@ public class StiWebDesignerBean {
                 String xsdPath = request.getSession().getServletContext().getRealPath("/data/Demo.xsd");
                 report.getDictionary().getDatabases().add(new StiXmlDatabase("Demo", xsdPath, xmlPath));
                 try {
-                    StiXmlTableFildsRequest tables = StiDataColumnsUtil.parceXSDSchema(new FileInputStream(xsdPath));
+                    StiXmlTableFieldsRequest tables = StiDataColumnsUtil.parceXSDSchema(new FileInputStream(xsdPath));
                     for (StiXmlTable table : tables.getTables()) {
                         StiDataTableSource tableSource = new StiDataTableSource("Demo." + table.getName(), table.getName(), table.getName());
                         tableSource.setColumns(new StiDataColumnsCollection());

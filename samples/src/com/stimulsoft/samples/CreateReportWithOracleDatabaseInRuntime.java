@@ -28,7 +28,7 @@ import com.stimulsoft.report.dictionary.databases.StiMySqlDatabase;
 import com.stimulsoft.report.saveLoad.StiDocument;
 import com.stimulsoft.report.utils.data.StiDataColumnsUtil;
 import com.stimulsoft.report.utils.data.StiSqlField;
-import com.stimulsoft.report.utils.data.StiTableFildsRequest;
+import com.stimulsoft.report.utils.data.StiTableFieldsRequest;
 import com.stimulsoft.viewer.StiViewerFx;
 import com.stimulsoft.viewer.events.StiViewCommonEvent;
 
@@ -50,7 +50,7 @@ public class CreateReportWithOracleDatabaseInRuntime {
         StiMySqlAdapter adapter = new StiMySqlAdapter(db.getConnectionString());
         Class.forName(adapter.getDriverName());
         Connection con = com.stimulsoft.webdesigner.helper.StiDictionaryHelper.getConnection(adapter.getJdbcParameters());
-        StiTableFildsRequest request = StiDataColumnsUtil.getFields(con, source.getQuery(), source);
+        StiTableFieldsRequest request = StiDataColumnsUtil.getFields(con, source.getQuery(), source);
         for (StiSqlField field : request.getColunns()) {
             source.getColumns().add(new StiDataColumn(field.getName(), field.getName(), field.getSystemType()));
         }

@@ -33,7 +33,7 @@ import com.stimulsoft.report.saveLoad.StiDocument;
 import com.stimulsoft.report.utils.data.StiDataColumnsUtil;
 import com.stimulsoft.report.utils.data.StiSqlField;
 import com.stimulsoft.report.utils.data.StiXmlTable;
-import com.stimulsoft.report.utils.data.StiXmlTableFildsRequest;
+import com.stimulsoft.report.utils.data.StiXmlTableFieldsRequest;
 import com.stimulsoft.viewer.StiViewerFx;
 import com.stimulsoft.viewer.events.StiViewCommonEvent;
 
@@ -61,7 +61,7 @@ public class RuntimeReportCreation extends JPanel {
         report.setDictionary(new StiDictionary(report));
         report.getDictionary().getDatabases().add(xmlDatabase);
 
-        StiXmlTableFildsRequest tables = StiDataColumnsUtil.parceXSDSchema(new FileInputStream(xsdPath));
+        StiXmlTableFieldsRequest tables = StiDataColumnsUtil.parceXSDSchema(new FileInputStream(xsdPath));
         StiDataTableSource tableSource = null;
         for (StiXmlTable table : tables.getTables()) {
             if (table.getName().equals("Categories")) {

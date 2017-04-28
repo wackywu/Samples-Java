@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@page import="com.stimulsoft.report.utils.data.StiXmlTableFieldsRequest"%>
 <%@page import="com.stimulsoft.base.json.JSONObject"%>
 <%@page import="com.stimulsoft.report.StiOptions"%>
 <%@page import="java.io.FileOutputStream"%>
@@ -9,7 +10,6 @@
 <%@page import="com.stimulsoft.report.utils.data.StiSqlField"%>
 <%@page import="com.stimulsoft.report.dictionary.dataSources.StiDataTableSource"%>
 <%@page import="com.stimulsoft.report.utils.data.StiXmlTable"%>
-<%@page import="com.stimulsoft.report.utils.data.StiXmlTableFildsRequest"%>
 <%@page import="com.stimulsoft.webdesigner.StiWebDesigerHandler"%>
 <%@page import="com.stimulsoft.webdesigner.StiWebDesignerOptions"%>
 <%@page
@@ -55,7 +55,7 @@
 			        public void onNewReportTemplate(StiReport report, HttpServletRequest request){
 			            report.getDictionary().getDatabases().add(new StiXmlDatabase("Demo", xsdPath, xmlPath));
 			            try{
-			                StiXmlTableFildsRequest tables = StiDataColumnsUtil.parceXSDSchema(new FileInputStream(xsdPath));
+			                StiXmlTableFieldsRequest tables = StiDataColumnsUtil.parceXSDSchema(new FileInputStream(xsdPath));
 			                for (StiXmlTable table : tables.getTables()){
 			                    StiDataTableSource tableSource = new StiDataTableSource("Demo." + table.getName(), table.getName(), table.getName());
 			                    tableSource.setColumns(new StiDataColumnsCollection());
