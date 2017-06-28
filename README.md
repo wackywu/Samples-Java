@@ -23,3 +23,5 @@ Read more about [Stimulsoft Reports.Java](https://www.stimulsoft.com/en/products
 [Free Download](https://www.stimulsoft.com/en/downloads)
 
 [Maven](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.stimulsoft%22%20AND%20a%3A%22stimulsoft-reports-libs%22)
+
+[License](LICENSE.md)
