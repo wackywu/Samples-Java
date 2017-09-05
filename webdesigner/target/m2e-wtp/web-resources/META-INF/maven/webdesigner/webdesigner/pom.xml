@@ -18,11 +18,11 @@
 			</plugin>
 		</plugins>
 	</build>
-	<dependencies>
+	<!-- dependencies>
 		<dependency>
 			<groupId>com.stimulsoft</groupId>
 			<artifactId>stimulsoft-reports-libs</artifactId>
-			<version>2017.1.1</version>
+			<version>2017.1.7</version>
 		</dependency>
-	</dependencies>
+	</dependencies-->
 </project>

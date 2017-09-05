@@ -15,7 +15,7 @@ public class ParentDatabase extends StiDatabase {
         super("Demo.Parent");// Database name
     }
 
-    public void connect(StiDataStoreSource stiDataStoreSource) throws StiException {
+    public void connect(StiDataStoreSource stiDataStoreSource, Boolean fillTable) throws StiException {
         DataTable dataTable = stiDataStoreSource.createNewTable();
         for (int i = 0; i < 5; i++) {
             DataRow dataRow = dataTable.createNewRow();
@@ -26,6 +26,11 @@ public class ParentDatabase extends StiDatabase {
     }
 
     public void disconnect() {
+    }
+
+    public void connect(StiDataStoreSource stiDataStoreSource) throws StiException {
+        connect(stiDataStoreSource, true);
+
     }
 
 }

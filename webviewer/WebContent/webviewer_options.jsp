@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@page import="com.stimulsoft.web.enums.StiWebViewMode"%>
 <%@page import="com.stimulsoft.lib.utils.StiValidationUtil"%>
 <%@page import="com.stimulsoft.webviewer.enums.StiContentAlignment"%>
 <%@page import="com.stimulsoft.base.drawing.StiColor"%>
@@ -10,7 +11,6 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.io.InputStream"%>
 <%@page import="com.stimulsoft.webviewer.enums.StiShowMenuMode"%>
-<%@page import="com.stimulsoft.webviewer.enums.StiPagesViewMode"%>
 <%@page import="com.stimulsoft.webviewer.enums.StiPrintDestination"%>
 <%@page import="com.stimulsoft.base.drawing.StiColorEnum"%>
 <%@page import="com.stimulsoft.webviewer.enums.StiWebViewerTheme"%>
@@ -116,7 +116,7 @@
 	    }
 	    if (request.getParameter("pagesViewMode") != null) {
 	        try {
-	            options.setPagesViewMode(StiPagesViewMode.valueOf(request.getParameter("pagesViewMode")));
+	            options.setPagesViewMode(StiWebViewMode.valueOf(request.getParameter("pagesViewMode")));
 	        } catch (Exception e) {
 	        }
 	    }
@@ -275,10 +275,10 @@
 						<tr>
 							<td>Pages view mode</td>
 							<td><select name="pagesViewMode" style="width: 100%"><option
-										value="<%=StiPagesViewMode.OnePage.name()%>"
-										<%=StiPagesViewMode.OnePage == options.getPagesViewMode() ? "selected" : ""%>><%=StiPagesViewMode.OnePage.name()%></option>
-									<option value="<%=StiPagesViewMode.WholeReport.name()%>"
-										<%=StiPagesViewMode.WholeReport == options.getPagesViewMode() ? "selected" : ""%>><%=StiPagesViewMode.WholeReport.name()%></option>
+										value="<%=StiWebViewMode.OnePage.name()%>"
+										<%=StiWebViewMode.OnePage == options.getPagesViewMode() ? "selected" : ""%>><%=StiWebViewMode.OnePage.name()%></option>
+									<option value="<%=StiWebViewMode.WholeReport.name()%>"
+										<%=StiWebViewMode.WholeReport == options.getPagesViewMode() ? "selected" : ""%>><%=StiWebViewMode.WholeReport.name()%></option>
 							</select></td>
 						</tr>
 						<tr>
