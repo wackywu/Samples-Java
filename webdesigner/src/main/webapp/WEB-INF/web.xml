@@ -20,4 +20,12 @@
     <servlet-name>StimulsoftDesignerAction</servlet-name>
     <url-pattern>/stimulsoft_webdesigner_action</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>StimulsoftWebviewerAction</servlet-name>
+    <servlet-class>com.stimulsoft.webviewer.servlet.StiWebViewerActionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StimulsoftWebviewerAction</servlet-name>
+    <url-pattern>/stimulsoft_webviewer_action</url-pattern>
+  </servlet-mapping>
 </web-app>
